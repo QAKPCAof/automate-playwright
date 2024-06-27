@@ -12,7 +12,13 @@ export class VerifyResponse {
     page: number,
     per_page: number,
     total: number,
-    total_pages: number
+    total_pages: number,
+    dataRes: {
+      id: number;
+      email: string;
+      first_name: string;
+      last_name: string;
+    }[]
   ): Promise<void> {
     await expect(resp.page).toEqual(page);
     await expect(resp.per_page).toEqual(per_page);
@@ -28,7 +34,7 @@ export class VerifyResponse {
       // Asserting element.id === 7
       const dataExp = dataApi.userData;
       // Assuming resData is a predefined array of objects you want to match against
-      dataExp.forEach((data: any) => {
+      dataRes.forEach((data: any) => {
         // Asserting individual properties of each data object
         expect(element.id).toEqual(data.id);
         expect(element.email).toEqual(data.email);

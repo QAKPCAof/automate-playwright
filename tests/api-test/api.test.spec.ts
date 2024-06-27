@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { dataApi } from "./api.data.ts";
-import { VerifyResponse } from "./api.funtion.ts";
+import { VerifyResponse } from "./api.function.ts";
 
 const verifyResponse = new VerifyResponse();
 const dataRes = dataApi.getData;
@@ -14,7 +14,8 @@ test("should able to login via api", async ({ request }) => {
     dataRes.page,
     dataRes.per_page,
     dataRes.total,
-    dataRes.total_pages
+    dataRes.total_pages,
+    dataUserList
   );
 });
 
