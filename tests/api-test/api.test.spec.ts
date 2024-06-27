@@ -14,11 +14,7 @@ test("should able to login via api", async ({ request }) => {
     dataRes.page,
     dataRes.per_page,
     dataRes.total,
-    dataRes.total_pages,
-    dataUserList.id,
-    dataUserList.email,
-    dataUserList.first_name,
-    dataUserList.last_name
+    dataRes.total_pages
   );
 });
 
