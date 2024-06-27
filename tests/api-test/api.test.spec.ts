@@ -14,16 +14,12 @@ test("should able to login via api", async ({ request }) => {
     dataRes.page,
     dataRes.per_page,
     dataRes.total,
-    dataRes.total_pages,
-    dataUserList.id,
-    dataUserList.email,
-    dataUserList.first_name,
-    dataUserList.last_name
+    dataRes.total_pages
   );
 });
 
 test("should login successfully", async ({ request }) => {
-  const response = await request.post(`${dataRes.baseUrl}`, {
+  const response = await request.post(`${dataRes.baseUrl}/login`, {
     data: {
       email: dataRes.email,
       password: dataRes.password,
